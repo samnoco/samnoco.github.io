@@ -25,8 +25,22 @@ body:before{
 }
 .container{width:min(1050px,92%);margin:auto}
 header{text-align:center;padding:42px 15px 22px}
-.logo{font-family:Pacifico,cursive;font-size:clamp(2.5rem,7vw,5.4rem);line-height:1;color:#fff;text-shadow:3px 3px 0 #d95d91,6px 6px 0 rgba(48,46,75,.18)}
-.subtitle{font-weight:700;letter-spacing:2px;text-transform:uppercase;margin:15px 0 4px}
+.logo{
+  font-family:Pacifico,cursive;
+  font-size:clamp(2.5rem,7vw,5.4rem);
+  line-height:1.18;
+  color:#fff;
+  text-shadow:3px 3px 0 #d95d91,6px 6px 0 rgba(48,46,75,.18);
+  padding:0 10px 12px;
+  overflow-wrap:break-word;
+}
+.subtitle{
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin:18px 0 4px;
+  line-height:1.45;
+}
 .note{font-size:.9rem;opacity:.75}
 .card{
   background:rgba(255,255,255,.92);border:4px solid #fff;border-radius:28px;
@@ -83,7 +97,12 @@ button.secondary{background:#8bcdf0;box-shadow:0 5px 0 #5a9dbd}
 .footer{text-align:center;font-size:.78rem;opacity:.65;padding:20px 0 40px}
 .confetti{position:fixed;top:-20px;font-size:22px;animation:fall 3.8s linear forwards;pointer-events:none;z-index:5}
 @keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
-@media(max-width:700px){.result-grid{grid-template-columns:1fr}.card{padding:22px 16px}}
+@media(max-width:700px){
+  .logo{font-size:clamp(2.25rem,11vw,3.7rem);line-height:1.22;padding-bottom:16px}
+  .subtitle{margin-top:14px;font-size:.9rem}
+  .result-grid{grid-template-columns:1fr}
+  .card{padding:22px 16px}
+}
 /* member themes */
 .theme-harry{background:linear-gradient(135deg,#ffd2df,#fff0a7,#d5f7d2)}
 .theme-niall{background:linear-gradient(135deg,#d9f3cf,#b6e6a8,#f8efb9)}
