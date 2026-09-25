@@ -154,46 +154,46 @@ const members={
     song:"What Makes You Beautiful",
     soloSong:"As It Was",
     soloWhy:"A defining song from Harry’s solo career, pairing bright pop with a reflective edge.",
-    quote:"“A good sense of humor, someone who makes me laugh.” — Harry Styles",
+    quote:"“Enjoy every moment, everything is gonna be fine... be kind to yourself.” — Harry Styles",
     songWhy:"A classic 1D-era choice for a bright, confident, feel-good result.",
     vibe:"Watermelon slices, colorful chaos, vintage-pop energy, and a little main-character sparkle."
   },
   niall:{
     name:"Niall Horan", theme:"theme-niall", emoji:"🌿",
-    photo:"https://i.pinimg.com/736x/0b/3c/85/0b3c85bb18c41fca53047a7b2a32e514.jpg",
+    photo:"https://commons.wikimedia.org/wiki/Special:FilePath/Niall%20Horan%202014.jpg?width=700",
     tag:"You are warm, grounded, and always ready for a good time.",
     description:"You like keeping things genuine. You can appreciate a big night out, but you also know the value of friends, fresh air, good food, music, and a relaxed atmosphere.",
     similar:"You value friendship, humor, simple pleasures, staying grounded, and making people feel comfortable.",
     song:"Don't Forget Where You Belong",
     soloSong:"Slow Hands",
     soloWhy:"A signature Niall solo track with a relaxed, guitar-driven pop feel.",
-    quote:"“I just like sitting at home, chilling and watching a movie.” — Niall Horan",
+    quote:"“You have to be yourself 100% of the time.” — Niall Horan",
     songWhy:"A warm, reflective track that fits your grounded and people-centered energy.",
     vibe:"Greenery, garden paths, acoustic guitars, sunny afternoons, and an easygoing playlist."
   },
   louis:{
     name:"Louis Tomlinson", theme:"theme-louis", emoji:"⚽",
-    photo:"https://static1.purepeople.com/articles/4/15/69/14/%40/1767949-louis-tomlinson-du-groupe-one-direction-1200x0-1.jpg",
+    photo:"https://commons.wikimedia.org/wiki/Special:FilePath/Louis%20Tomlinson%20%2814278390914%29.jpg?width=700",
     tag:"You are loyal, hilarious, competitive, and full of heart.",
     description:"You bring energy into a room and probably have a running joke with at least one person. Underneath the chaos, loyalty and caring about your people matter a lot to you.",
     similar:"You value loyalty, humor, friendship, family, competition, and showing up for your people.",
     song:"Steal My Girl",
     soloSong:"Back to You",
     soloWhy:"An early Louis solo-era standout that fits the emotional, direct side of his music.",
-    quote:"“I liked to be the class clown, I liked to make people laugh.” — Louis Tomlinson",
+    quote:"“I can get what I want. I just have to really knuckle down.” — Louis Tomlinson",
     songWhy:"Big personality, big energy, and unmistakably 1D.",
     vibe:"Stadium lights, football energy, blue accents, inside jokes, and a little friendly chaos."
   },
   zayn:{
     name:"Zayn Malik", theme:"theme-zayn", emoji:"🇬🇧",
-    photo:"https://i.pinimg.com/564x/69/51/77/695177b556f9dc47b28383f55b30e629.jpg",
+    photo:"https://commons.wikimedia.org/wiki/Special:FilePath/Zayn%20Malik%20November%202014.jpg?width=700",
     tag:"You are artistic, introspective, and quietly distinctive.",
     description:"You may prefer depth over noise. You have your own taste, notice details other people miss, and enjoy having space to explore your creative side.",
     similar:"You value individuality, artistic expression, privacy, style, and choosing your own path.",
     song:"Night Changes",
     soloSong:"PILLOWTALK",
     soloWhy:"Zayn’s debut solo single, representing the more atmospheric direction of his solo music.",
-    quote:"“A nice smile and a good sense of humor.” — Zayn Malik",
+    quote:"“Don’t be afraid to be the person that you are.” — Zayn Malik",
     songWhy:"A more reflective 1D-era soundtrack for your thoughtful, understated vibe.",
     vibe:"London streets, monochrome photography, subtle British details, headphones, and late-night creativity."
   },
@@ -206,7 +206,7 @@ const members={
     song:"Story of My Life",
     soloSong:"Strip That Down",
     soloWhy:"Liam’s debut solo single and a major track from the beginning of his solo career.",
-    quote:"“I kind of wish I did, though.” — Liam Payne, on keeping a diary",
+    quote:"“It’s like a dream. I just hope it’s not over yet.” — Liam Payne",
     songWhy:"A reflective 1D classic that suits a thoughtful, sentimental result.",
     vibe:"Soft clouds, stars, calm blue skies, gentle light, and a peaceful nostalgic atmosphere."
   }
@@ -290,7 +290,7 @@ function showResult(){
  document.getElementById("resultName").textContent=`${m.emoji} ${m.name}`;
  document.getElementById("resultTag").textContent=m.tag;
  const photo=document.getElementById("resultPhoto");photo.src=m.photo;photo.alt=`One Direction-era photo of ${m.name}`;
- photo.onerror=()=>{photo.style.display="none"};
+ photo.onerror=()=>{photo.style.display="none"; console.warn("Result photo could not be loaded. Check your internet connection.");};
  document.getElementById("description").textContent=m.description;
  document.getElementById("similar").textContent=m.similar;
  document.getElementById("song").textContent=m.song;
