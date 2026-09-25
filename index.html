@@ -33,6 +33,7 @@ header{text-align:center;padding:42px 15px 22px}
   box-shadow:0 14px 35px rgba(57,48,87,.18);padding:30px;
 }
 #intro{max-width:850px;margin:10px auto 45px;text-align:center}
+.hero-photo{width:min(680px,100%);height:330px;object-fit:cover;border-radius:22px;border:7px solid #fff;box-shadow:0 10px 25px rgba(57,48,87,.2);margin:18px auto 10px;display:block}
 .sticker{display:inline-block;background:#fff0f6;border:2px dashed #ef6d9b;border-radius:999px;padding:8px 14px;margin:4px;transform:rotate(-2deg)}
 button{
   border:0;border-radius:999px;padding:14px 24px;font:700 1rem Quicksand;cursor:pointer;
@@ -66,6 +67,13 @@ button.secondary{background:#8bcdf0;box-shadow:0 5px 0 #5a9dbd}
 .result-box{background:rgba(255,255,255,.72);border:2px dashed rgba(40,40,60,.2);border-radius:20px;padding:20px}
 .result-box h3{margin-top:0}
 .song{font-size:1.2rem;font-weight:700}
+.memorial{
+  margin:0 25px 25px;padding:20px 22px;text-align:center;
+  background:rgba(255,255,255,.72);border:2px solid rgba(255,255,255,.9);
+  border-radius:22px;box-shadow:0 8px 22px rgba(65,91,130,.10)
+}
+.memorial h3{margin:0 0 8px;font-family:Pacifico,cursive;font-size:1.5rem;font-weight:400}
+.memorial p{margin:0;line-height:1.65}
 .footer{text-align:center;font-size:.78rem;opacity:.65;padding:20px 0 40px}
 .confetti{position:fixed;top:-20px;font-size:22px;animation:fall 3.8s linear forwards;pointer-events:none;z-index:5}
 @keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
@@ -93,6 +101,7 @@ button.secondary{background:#8bcdf0;box-shadow:0 5px 0 #5a9dbd}
     <span class="sticker">10 Questions</span>
   </div>
   <h1>Ready to find your match?</h1>
+  <img class="hero-photo" src="https://s2-quem.glbimg.com/34ksjgomcGnnITvRncYYPhpEBcw%3D/0x0%3A3000x1926/888x0/smart/filters%3Astrip_icc%28%29/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2024/B/b/YDpOzsQU6DqEH4gJUT7w/gettyimages-455817592.jpg" alt="One Direction during their band era">
   <p>Choose the answer that feels most like you. Every choice adds points to one of the five quiz personalities.</p>
   <p><strong>Music:</strong> The official One Direction site has the “You & I” video and music pages. Use the button below to open the official music page while taking the quiz.</p>
   <button onclick="openMusic()">♫ Open “You & I”</button>
@@ -121,6 +130,10 @@ button.secondary{background:#8bcdf0;box-shadow:0 5px 0 #5a9dbd}
     <div class="result-box"><h3>💬 A quote from them</h3><p id="quote"></p></div>
     <div class="result-box"><h3>🎧 Your solo soundtrack</h3><p class="song" id="soloSong"></p><p id="soloWhy"></p></div>
   </div>
+  <div id="liamMemorial" class="memorial hidden">
+    <h3>☁️ In Memory of Liam</h3>
+    <p>In loving memory of Liam Payne (1993–2024). His voice, creativity, humor, and contribution to One Direction are remembered by fans around the world. This page celebrates the music and memories he shared with so many people. 🤍</p>
+  </div>
   <div style="text-align:center;padding:0 20px 30px">
     <button onclick="restart()">↻ Take It Again</button>
     <button class="secondary" onclick="openMusic()">♫ Open “You & I”</button>
@@ -133,8 +146,8 @@ button.secondary{background:#8bcdf0;box-shadow:0 5px 0 #5a9dbd}
 <script>
 const members={
   harry:{
-    name:"Harry Styles", theme:"theme-harry", emoji:"🍓",
-    photo:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Harry_Styles_2014.jpg/640px-Harry_Styles_2014.jpg",
+    name:"Harry Styles", theme:"theme-harry", emoji:"🍉",
+    photo:"https://i.pinimg.com/736x/bf/d0/4f/bfd04f2b704e38b49135978e614822fb.jpg",
     tag:"You are expressive, curious, and wonderfully yourself.",
     description:"You tend to follow your curiosity, enjoy trying something different, and aren't afraid of a little drama in your outfit or your plans. Creativity and individuality are a big part of your vibe.",
     similar:"You value self-expression, adventure, creativity, and doing things in a way that feels authentic to you.",
@@ -143,11 +156,11 @@ const members={
     soloWhy:"A defining song from Harry’s solo career, pairing bright pop with a reflective edge.",
     quote:"“A good sense of humor, someone who makes me laugh.” — Harry Styles",
     songWhy:"A classic 1D-era choice for a bright, confident, feel-good result.",
-    vibe:"Fruit stickers, colorful chaos, vintage-pop energy, and a little main-character sparkle."
+    vibe:"Watermelon slices, colorful chaos, vintage-pop energy, and a little main-character sparkle."
   },
   niall:{
     name:"Niall Horan", theme:"theme-niall", emoji:"🌿",
-    photo:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Niall_Horan_2014.jpg/640px-Niall_Horan_2014.jpg",
+    photo:"https://i.pinimg.com/736x/0b/3c/85/0b3c85bb18c41fca53047a7b2a32e514.jpg",
     tag:"You are warm, grounded, and always ready for a good time.",
     description:"You like keeping things genuine. You can appreciate a big night out, but you also know the value of friends, fresh air, good food, music, and a relaxed atmosphere.",
     similar:"You value friendship, humor, simple pleasures, staying grounded, and making people feel comfortable.",
@@ -160,7 +173,7 @@ const members={
   },
   louis:{
     name:"Louis Tomlinson", theme:"theme-louis", emoji:"⚽",
-    photo:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Louis_Tomlinson_2014.jpg/640px-Louis_Tomlinson_2014.jpg",
+    photo:"https://static1.purepeople.com/articles/4/15/69/14/%40/1767949-louis-tomlinson-du-groupe-one-direction-1200x0-1.jpg",
     tag:"You are loyal, hilarious, competitive, and full of heart.",
     description:"You bring energy into a room and probably have a running joke with at least one person. Underneath the chaos, loyalty and caring about your people matter a lot to you.",
     similar:"You value loyalty, humor, friendship, family, competition, and showing up for your people.",
@@ -173,7 +186,7 @@ const members={
   },
   zayn:{
     name:"Zayn Malik", theme:"theme-zayn", emoji:"🇬🇧",
-    photo:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Zayn_Malik_2014.jpg/640px-Zayn_Malik_2014.jpg",
+    photo:"https://i.pinimg.com/564x/69/51/77/695177b556f9dc47b28383f55b30e629.jpg",
     tag:"You are artistic, introspective, and quietly distinctive.",
     description:"You may prefer depth over noise. You have your own taste, notice details other people miss, and enjoy having space to explore your creative side.",
     similar:"You value individuality, artistic expression, privacy, style, and choosing your own path.",
@@ -186,7 +199,7 @@ const members={
   },
   liam:{
     name:"Liam Payne", theme:"theme-liam", emoji:"☁️",
-    photo:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Liam_Payne_2014.jpg/640px-Liam_Payne_2014.jpg",
+    photo:"https://i.pinimg.com/originals/c0/5a/80/c05a80b5b4cdf911a97a40e23f078571.png",
     tag:"You are thoughtful, driven, supportive, and sincere.",
     description:"You tend to care about the people around you while also pushing yourself toward goals. You can be reflective and ambitious at the same time.",
     similar:"You value encouragement, responsibility, teamwork, ambition, and being there for the people you care about.",
@@ -286,6 +299,8 @@ function showResult(){
  document.getElementById("quote").textContent=m.quote;
  document.getElementById("soloSong").textContent=m.soloSong;
  document.getElementById("soloWhy").textContent=m.soloWhy;
+ const memorial=document.getElementById("liamMemorial");
+ if(memorial) memorial.classList.toggle("hidden", winner!=="liam");
  confetti(m.emoji);
  window.scrollTo({top:0,behavior:"smooth"});
 }
