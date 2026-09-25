@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Which One Direction Member Are You?</title>
+<title>Which One Direction member are you?</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600;700&display=swap');
 
@@ -80,7 +80,7 @@ button.secondary{background:#8bcdf0;box-shadow:0 5px 0 #5a9dbd}
 </head>
 <body>
 <header class="container">
-  <div class="logo">Which 1D Boy Are You?</div>
+  <div class="logo">Which One Direction member are you?</div>
   <div class="subtitle">A totally 2010s personality quiz</div>
   <div class="note">Five members. Ten questions. One very important result.</div>
 </header>
@@ -110,7 +110,7 @@ button.secondary{background:#8bcdf0;box-shadow:0 5px 0 #5a9dbd}
   <div class="result-top" id="resultTop">
     <div class="sticker">★ YOUR RESULT ★</div>
     <h1 class="result-name" id="resultName"></h1>
-    <img class="result-photo" id="resultPhoto" alt="">
+    <img class="result-photo" id="resultPhoto" alt="One Direction-era member photo" loading="eager">
     <p id="resultTag" style="font-size:1.15rem;font-weight:700"></p>
   </div>
   <div class="result-grid">
@@ -118,6 +118,8 @@ button.secondary{background:#8bcdf0;box-shadow:0 5px 0 #5a9dbd}
     <div class="result-box"><h3>💫 You're similar because...</h3><p id="similar"></p></div>
     <div class="result-box"><h3>🎵 Your 1D soundtrack</h3><p class="song" id="song"></p><p id="songWhy"></p></div>
     <div class="result-box"><h3>📸 Your vibe</h3><p id="vibe"></p></div>
+    <div class="result-box"><h3>💬 A quote from them</h3><p id="quote"></p></div>
+    <div class="result-box"><h3>🎧 Your solo soundtrack</h3><p class="song" id="soloSong"></p><p id="soloWhy"></p></div>
   </div>
   <div style="text-align:center;padding:0 20px 30px">
     <button onclick="restart()">↻ Take It Again</button>
@@ -137,6 +139,9 @@ const members={
     description:"You tend to follow your curiosity, enjoy trying something different, and aren't afraid of a little drama in your outfit or your plans. Creativity and individuality are a big part of your vibe.",
     similar:"You value self-expression, adventure, creativity, and doing things in a way that feels authentic to you.",
     song:"What Makes You Beautiful",
+    soloSong:"As It Was",
+    soloWhy:"A defining song from Harry’s solo career, pairing bright pop with a reflective edge.",
+    quote:"“A good sense of humor, someone who makes me laugh.” — Harry Styles",
     songWhy:"A classic 1D-era choice for a bright, confident, feel-good result.",
     vibe:"Fruit stickers, colorful chaos, vintage-pop energy, and a little main-character sparkle."
   },
@@ -147,6 +152,9 @@ const members={
     description:"You like keeping things genuine. You can appreciate a big night out, but you also know the value of friends, fresh air, good food, music, and a relaxed atmosphere.",
     similar:"You value friendship, humor, simple pleasures, staying grounded, and making people feel comfortable.",
     song:"Don't Forget Where You Belong",
+    soloSong:"Slow Hands",
+    soloWhy:"A signature Niall solo track with a relaxed, guitar-driven pop feel.",
+    quote:"“I just like sitting at home, chilling and watching a movie.” — Niall Horan",
     songWhy:"A warm, reflective track that fits your grounded and people-centered energy.",
     vibe:"Greenery, garden paths, acoustic guitars, sunny afternoons, and an easygoing playlist."
   },
@@ -157,6 +165,9 @@ const members={
     description:"You bring energy into a room and probably have a running joke with at least one person. Underneath the chaos, loyalty and caring about your people matter a lot to you.",
     similar:"You value loyalty, humor, friendship, family, competition, and showing up for your people.",
     song:"Steal My Girl",
+    soloSong:"Back to You",
+    soloWhy:"An early Louis solo-era standout that fits the emotional, direct side of his music.",
+    quote:"“I liked to be the class clown, I liked to make people laugh.” — Louis Tomlinson",
     songWhy:"Big personality, big energy, and unmistakably 1D.",
     vibe:"Stadium lights, football energy, blue accents, inside jokes, and a little friendly chaos."
   },
@@ -167,6 +178,9 @@ const members={
     description:"You may prefer depth over noise. You have your own taste, notice details other people miss, and enjoy having space to explore your creative side.",
     similar:"You value individuality, artistic expression, privacy, style, and choosing your own path.",
     song:"Night Changes",
+    soloSong:"PILLOWTALK",
+    soloWhy:"Zayn’s debut solo single, representing the more atmospheric direction of his solo music.",
+    quote:"“A nice smile and a good sense of humor.” — Zayn Malik",
     songWhy:"A more reflective 1D-era soundtrack for your thoughtful, understated vibe.",
     vibe:"London streets, monochrome photography, subtle British details, headphones, and late-night creativity."
   },
@@ -177,6 +191,9 @@ const members={
     description:"You tend to care about the people around you while also pushing yourself toward goals. You can be reflective and ambitious at the same time.",
     similar:"You value encouragement, responsibility, teamwork, ambition, and being there for the people you care about.",
     song:"Story of My Life",
+    soloSong:"Strip That Down",
+    soloWhy:"Liam’s debut solo single and a major track from the beginning of his solo career.",
+    quote:"“I kind of wish I did, though.” — Liam Payne, on keeping a diary",
     songWhy:"A reflective 1D classic that suits a thoughtful, sentimental result.",
     vibe:"Soft clouds, stars, calm blue skies, gentle light, and a peaceful nostalgic atmosphere."
   }
@@ -266,6 +283,9 @@ function showResult(){
  document.getElementById("song").textContent=m.song;
  document.getElementById("songWhy").textContent=m.songWhy;
  document.getElementById("vibe").textContent=m.vibe;
+ document.getElementById("quote").textContent=m.quote;
+ document.getElementById("soloSong").textContent=m.soloSong;
+ document.getElementById("soloWhy").textContent=m.soloWhy;
  confetti(m.emoji);
  window.scrollTo({top:0,behavior:"smooth"});
 }
