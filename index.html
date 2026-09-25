@@ -1,134 +1,280 @@
-<!DOCTYPE html><!-- /personal-website/index.html -->
-<html lang="en"> 
-  <head> 
-    <meta charset="UTF-8" /> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
-    <title> Sam O'Connor - Resume</title> 
-    <style>
-        /* Simple, inline CSS for styling */
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Which One Direction Member Are You?</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600;700&display=swap');
 
-        header {
-            background: #333;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
-        }
-
-        header p {
-            margin: 0;
-            font-size: 1.2rem;
-        }
-
-        main {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 1rem;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        section {
-            margin-bottom: 2rem;
-        }
-
-        h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        ul li {
-            margin: 0.5rem 0;
-        }
-
-        a {
-            color: #007BFF;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-    </style> 
-  </head> 
-  <body> 
-    <header> 
-      <h1>Sam O'Connor</h1> 
-      <p>Resume Website</p> 
-    </header> 
-    <main> 
-        <img src="assets/IMG_0053.JPG">
-        <style>
-    body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-        color: #333;
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    header {
-        background: #333;
-        color: #fff;
-        padding: 1rem 0;
-        text-align: center;
-    }
+*{box-sizing:border-box}
+:root{
+  --pink:#ff8fb1;--blue:#8dd8ff;--yellow:#ffe28a;--ink:#25233a;
+}
+body{
+  margin:0;color:var(--ink);font-family:Quicksand,Arial,sans-serif;
+  min-height:100vh;background:
+  radial-gradient(circle at 15% 15%,#fff 0 4px,transparent 5px),
+  radial-gradient(circle at 80% 30%,#fff 0 3px,transparent 4px),
+  linear-gradient(135deg,#b9eaff,#ffd4e5 48%,#fff2b8);
+  background-size:90px 90px,120px 120px,100% 100%;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;
+  background-image:radial-gradient(#777 0.7px,transparent .7px);background-size:7px 7px;
+}
+.container{width:min(1050px,92%);margin:auto}
+header{text-align:center;padding:42px 15px 22px}
+.logo{font-family:Pacifico,cursive;font-size:clamp(2.5rem,7vw,5.4rem);line-height:1;color:#fff;text-shadow:3px 3px 0 #d95d91,6px 6px 0 rgba(48,46,75,.18)}
+.subtitle{font-weight:700;letter-spacing:2px;text-transform:uppercase;margin:15px 0 4px}
+.note{font-size:.9rem;opacity:.75}
+.card{
+  background:rgba(255,255,255,.92);border:4px solid #fff;border-radius:28px;
+  box-shadow:0 14px 35px rgba(57,48,87,.18);padding:30px;
+}
+#intro{max-width:850px;margin:10px auto 45px;text-align:center}
+.sticker{display:inline-block;background:#fff0f6;border:2px dashed #ef6d9b;border-radius:999px;padding:8px 14px;margin:4px;transform:rotate(-2deg)}
+button{
+  border:0;border-radius:999px;padding:14px 24px;font:700 1rem Quicksand;cursor:pointer;
+  transition:.18s transform,.18s box-shadow;background:#ff78a5;color:white;
+  box-shadow:0 5px 0 #c94f7b;margin:8px;
+}
+button:hover{transform:translateY(-2px);box-shadow:0 7px 0 #c94f7b}
+button.secondary{background:#8bcdf0;box-shadow:0 5px 0 #5a9dbd}
+.hidden{display:none!important}
+.progress-wrap{height:14px;background:#eee;border-radius:20px;overflow:hidden;margin:8px 0 25px}
+.progress{height:100%;width:0;background:linear-gradient(90deg,#ff7ea8,#ffd65c,#82d9b1);transition:.3s}
+.qnum{text-transform:uppercase;letter-spacing:2px;font-weight:700;color:#b64c79}
+.question{font-size:clamp(1.45rem,3vw,2.1rem);font-weight:700;margin:10px 0 25px}
+.answers{display:grid;gap:13px}
+.answer{
+  text-align:left;background:#fff;border:3px solid #f0d6e1;color:var(--ink);
+  box-shadow:none;margin:0;border-radius:18px;padding:16px 18px;
+}
+.answer:hover{border-color:#ff8fb1;box-shadow:0 5px 15px rgba(255,143,177,.2)}
+.answer span{display:block;font-size:.82rem;opacity:.55;margin-bottom:3px}
+#quiz{margin-bottom:50px}
+.result{overflow:hidden;padding:0}
+.result-top{padding:42px 30px;text-align:center}
+.result-name{font-family:Pacifico;font-size:clamp(2.5rem,7vw,4.7rem);margin:0}
+.result-photo{
+  width:min(290px,75vw);height:330px;object-fit:cover;border-radius:25px;
+  border:7px solid #fff;box-shadow:0 12px 25px rgba(0,0,0,.18);margin:20px auto;
+  background:#eee;
+}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:0 25px 30px}
+.result-box{background:rgba(255,255,255,.72);border:2px dashed rgba(40,40,60,.2);border-radius:20px;padding:20px}
+.result-box h3{margin-top:0}
+.song{font-size:1.2rem;font-weight:700}
+.footer{text-align:center;font-size:.78rem;opacity:.65;padding:20px 0 40px}
+.confetti{position:fixed;top:-20px;font-size:22px;animation:fall 3.8s linear forwards;pointer-events:none;z-index:5}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+@media(max-width:700px){.result-grid{grid-template-columns:1fr}.card{padding:22px 16px}}
+/* member themes */
+.theme-harry{background:linear-gradient(135deg,#ffd2df,#fff0a7,#d5f7d2)}
+.theme-niall{background:linear-gradient(135deg,#d9f3cf,#b6e6a8,#f8efb9)}
+.theme-louis{background:linear-gradient(135deg,#d9e8ff,#aec9ff,#f2f5ff)}
+.theme-zayn{background:linear-gradient(135deg,#d8e3ee,#eef3f7,#e9d9c8)}
+.theme-liam{background:linear-gradient(135deg,#d9f1ff,#f7fbff,#c9dcff)}
 </style>
-      <section id="about"> 
-        <h2>About Me</h2> 
-        <p> Brief introduction about yourself. Mention your experience, expertise, and interests. </p> 
-      </section> 
-      <section> 
-       
-      </section> 
-      <section id="experience"> 
-        <h2>Experience</h2> 
-        <ul> 
-          <li> <strong>Job Title</strong> at <em>Company Name</em> (Start Year - End Year) <p>Brief description of your responsibilities and achievements.</p> </li> 
-          <li> <strong>Job Title</strong> at <em>Company Name</em> (Start Year - End Year) <p>Brief description of your responsibilities and achievements.</p> </li> 
-        </ul> 
-      </section> 
-      <section id="skills"> 
-        <h2>Skills</h2> 
-        <ul> 
-          <li>Skill 1</li> 
-          <li>Skill 2</li> 
-          <li>Skill 3</li> 
-        </ul> 
-      </section> 
-      <section id="contact"> 
-        <h2>Contact</h2> 
-        <p>Email: <a href="mailto:yourname@example.com">yourname@example.com</a></p> 
-        <p>Phone: (123) 456-7890</p> 
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/yourname" target="_blank">linkedin.com/in/yourname</a></p> 
-      </section> 
-    </main>  
-  </body>
+</head>
+<body>
+<header class="container">
+  <div class="logo">Which 1D Boy Are You?</div>
+  <div class="subtitle">A totally 2010s personality quiz</div>
+  <div class="note">Five members. Ten questions. One very important result.</div>
+</header>
+
+<main class="container">
+<section id="intro" class="card">
+  <div>
+    <span class="sticker">★ Directioner Certified</span>
+    <span class="sticker">2010s Nostalgia</span>
+    <span class="sticker">10 Questions</span>
+  </div>
+  <h1>Ready to find your match?</h1>
+  <p>Choose the answer that feels most like you. Every choice adds points to one of the five quiz personalities.</p>
+  <p><strong>Music:</strong> The official One Direction site has the “You & I” video and music pages. Use the button below to open the official music page while taking the quiz.</p>
+  <button onclick="openMusic()">♫ Open “You & I”</button>
+  <button class="secondary" onclick="startQuiz()">Start the Quiz →</button>
+</section>
+
+<section id="quiz" class="card hidden">
+  <div class="qnum" id="qnum"></div>
+  <div class="progress-wrap"><div class="progress" id="progress"></div></div>
+  <div class="question" id="question"></div>
+  <div class="answers" id="answers"></div>
+</section>
+
+<section id="result" class="card result hidden">
+  <div class="result-top" id="resultTop">
+    <div class="sticker">★ YOUR RESULT ★</div>
+    <h1 class="result-name" id="resultName"></h1>
+    <img class="result-photo" id="resultPhoto" alt="">
+    <p id="resultTag" style="font-size:1.15rem;font-weight:700"></p>
+  </div>
+  <div class="result-grid">
+    <div class="result-box"><h3>✨ Your personality</h3><p id="description"></p></div>
+    <div class="result-box"><h3>💫 You're similar because...</h3><p id="similar"></p></div>
+    <div class="result-box"><h3>🎵 Your 1D soundtrack</h3><p class="song" id="song"></p><p id="songWhy"></p></div>
+    <div class="result-box"><h3>📸 Your vibe</h3><p id="vibe"></p></div>
+  </div>
+  <div style="text-align:center;padding:0 20px 30px">
+    <button onclick="restart()">↻ Take It Again</button>
+    <button class="secondary" onclick="openMusic()">♫ Open “You & I”</button>
+  </div>
+</section>
+</main>
+
+<div class="footer">Fan-made quiz • One Direction and related names/music belong to their respective rights holders.</div>
+
+<script>
+const members={
+  harry:{
+    name:"Harry Styles", theme:"theme-harry", emoji:"🍓",
+    photo:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Harry_Styles_2014.jpg/640px-Harry_Styles_2014.jpg",
+    tag:"You are expressive, curious, and wonderfully yourself.",
+    description:"You tend to follow your curiosity, enjoy trying something different, and aren't afraid of a little drama in your outfit or your plans. Creativity and individuality are a big part of your vibe.",
+    similar:"You value self-expression, adventure, creativity, and doing things in a way that feels authentic to you.",
+    song:"What Makes You Beautiful",
+    songWhy:"A classic 1D-era choice for a bright, confident, feel-good result.",
+    vibe:"Fruit stickers, colorful chaos, vintage-pop energy, and a little main-character sparkle."
+  },
+  niall:{
+    name:"Niall Horan", theme:"theme-niall", emoji:"🌿",
+    photo:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Niall_Horan_2014.jpg/640px-Niall_Horan_2014.jpg",
+    tag:"You are warm, grounded, and always ready for a good time.",
+    description:"You like keeping things genuine. You can appreciate a big night out, but you also know the value of friends, fresh air, good food, music, and a relaxed atmosphere.",
+    similar:"You value friendship, humor, simple pleasures, staying grounded, and making people feel comfortable.",
+    song:"Don't Forget Where You Belong",
+    songWhy:"A warm, reflective track that fits your grounded and people-centered energy.",
+    vibe:"Greenery, garden paths, acoustic guitars, sunny afternoons, and an easygoing playlist."
+  },
+  louis:{
+    name:"Louis Tomlinson", theme:"theme-louis", emoji:"⚽",
+    photo:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Louis_Tomlinson_2014.jpg/640px-Louis_Tomlinson_2014.jpg",
+    tag:"You are loyal, hilarious, competitive, and full of heart.",
+    description:"You bring energy into a room and probably have a running joke with at least one person. Underneath the chaos, loyalty and caring about your people matter a lot to you.",
+    similar:"You value loyalty, humor, friendship, family, competition, and showing up for your people.",
+    song:"Steal My Girl",
+    songWhy:"Big personality, big energy, and unmistakably 1D.",
+    vibe:"Stadium lights, football energy, blue accents, inside jokes, and a little friendly chaos."
+  },
+  zayn:{
+    name:"Zayn Malik", theme:"theme-zayn", emoji:"🇬🇧",
+    photo:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Zayn_Malik_2014.jpg/640px-Zayn_Malik_2014.jpg",
+    tag:"You are artistic, introspective, and quietly distinctive.",
+    description:"You may prefer depth over noise. You have your own taste, notice details other people miss, and enjoy having space to explore your creative side.",
+    similar:"You value individuality, artistic expression, privacy, style, and choosing your own path.",
+    song:"Night Changes",
+    songWhy:"A more reflective 1D-era soundtrack for your thoughtful, understated vibe.",
+    vibe:"London streets, monochrome photography, subtle British details, headphones, and late-night creativity."
+  },
+  liam:{
+    name:"Liam Payne", theme:"theme-liam", emoji:"☁️",
+    photo:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Liam_Payne_2014.jpg/640px-Liam_Payne_2014.jpg",
+    tag:"You are thoughtful, driven, supportive, and sincere.",
+    description:"You tend to care about the people around you while also pushing yourself toward goals. You can be reflective and ambitious at the same time.",
+    similar:"You value encouragement, responsibility, teamwork, ambition, and being there for the people you care about.",
+    song:"Story of My Life",
+    songWhy:"A reflective 1D classic that suits a thoughtful, sentimental result.",
+    vibe:"Soft clouds, stars, calm blue skies, gentle light, and a peaceful nostalgic atmosphere."
+  }
+};
+
+const questions=[
+ {q:"Your ideal Saturday afternoon sounds like...",a:[
+  ["harry","Exploring somewhere new and finding a weird little café."],
+  ["niall","Hanging outside with friends, music on, no rush."],
+  ["louis","Going to a match or doing something competitive with friends."],
+  ["zayn","Staying in, making something creative, and enjoying some quiet."],
+  ["liam","Working toward a goal, then relaxing with people I care about."]
+ ]},
+ {q:"Pick a creative outlet:",a:[
+  ["harry","Fashion, photography, or performing."],["niall","Writing a song or playing guitar."],
+  ["louis","Writing lyrics that say exactly what I mean."],["zayn","Making visual art or experimenting with sound."],["liam","Producing, songwriting, or building a project."]
+ ]},
+ {q:"Your friends would probably describe you as...",a:[
+  ["harry","Open-minded and a little unpredictable."],["niall","Easygoing and fun."],["louis","Funny, loyal, and loud in the best way."],["zayn","Quiet but observant."],["liam","Dependable and encouraging."]
+ ]},
+ {q:"Choose a perfect vacation:",a:[
+  ["harry","A spontaneous trip where I barely know the itinerary."],["niall","Somewhere green, sunny, and relaxed."],
+  ["louis","A city with sports, concerts, and nightlife."],["zayn","A stylish city with great food and art."],["liam","A balanced trip with activities and downtime."]
+ ]},
+ {q:"At a party, you are most likely to...",a:[
+  ["harry","Start a conversation with someone I have never met."],["niall","Find the best snacks and settle in with friends."],
+  ["louis","Become the unofficial entertainment."],["zayn","Hang back and talk to a few people one-on-one."],["liam","Check that everyone is having a good time."]
+ ]},
+ {q:"Pick a style philosophy:",a:[
+  ["harry","Wear what makes me feel like me."],["niall","Comfortable, clean, and ready for anything."],
+  ["louis","Casual with a little attitude."],["zayn","Minimal, sharp, and intentional."],["liam","Classic, polished, and practical."]
+ ]},
+ {q:"When plans go wrong, you...",a:[
+  ["harry","Turn it into a story."],["niall","Laugh and figure it out."],["louis","Make a joke, then take charge."],["zayn","Step back and rethink the plan."],["liam","Stay calm and help everyone regroup."]
+ ]},
+ {q:"Choose a playlist mood:",a:[
+  ["harry","Eclectic songs that make me feel something."],["niall","Acoustic, upbeat, and easy to sing along to."],
+  ["louis","Anthemic songs I can shout with friends."],["zayn","Moody, atmospheric, and experimental."],["liam","Big emotional songs with a hopeful edge."]
+ ]},
+ {q:"What matters most in friendship?",a:[
+  ["harry","Accepting each other's individuality."],["niall","Feeling comfortable enough to be silly."],
+  ["louis","Loyalty, especially when things get hard."],["zayn","Respecting boundaries and being genuine."],["liam","Being able to count on each other."]
+ ]},
+ {q:"Your personal motto is closest to...",a:[
+  ["harry","Be curious. Be yourself. Try the thing."],["niall","Enjoy the moment and don't overcomplicate it."],
+  ["louis","Look after your people and have a laugh."],["zayn","Make your own path."],["liam","Keep going, keep growing, and support others."]
+ ]}
+];
+
+let index=0, scores={harry:0,niall:0,louis:0,zayn:0,liam:0};
+
+function openMusic(){window.open("https://www.onedirectionmusic.com/gb/music/albums/midnight-memories/songs/you-and-i","_blank")}
+function startQuiz(){
+ document.getElementById("intro").classList.add("hidden");
+ document.getElementById("result").classList.add("hidden");
+ document.getElementById("quiz").classList.remove("hidden");
+ index=0;scores={harry:0,niall:0,louis:0,zayn:0,liam:0};renderQuestion();
+}
+function renderQuestion(){
+ const q=questions[index];
+ document.getElementById("qnum").textContent=`Question ${index+1} of ${questions.length}`;
+ document.getElementById("progress").style.width=`${(index/questions.length)*100}%`;
+ document.getElementById("question").textContent=q.q;
+ const box=document.getElementById("answers");box.innerHTML="";
+ q.a.forEach((item,i)=>{
+  const b=document.createElement("button");b.className="answer";
+  b.innerHTML=`<span>${String.fromCharCode(65+i)}</span>${item[1]}`;
+  b.onclick=()=>choose(item[0]);box.appendChild(b);
+ });
+}
+function choose(member){
+ scores[member]++;
+ index++;
+ if(index<questions.length) renderQuestion(); else showResult();
+}
+function showResult(){
+ const winner=Object.entries(scores).sort((a,b)=>b[1]-a[1])[0][0],m=members[winner];
+ document.getElementById("quiz").classList.add("hidden");
+ const result=document.getElementById("result");result.classList.remove("hidden");
+ result.className=`card result ${m.theme}`;
+ document.getElementById("resultName").textContent=`${m.emoji} ${m.name}`;
+ document.getElementById("resultTag").textContent=m.tag;
+ const photo=document.getElementById("resultPhoto");photo.src=m.photo;photo.alt=`One Direction-era photo of ${m.name}`;
+ photo.onerror=()=>{photo.style.display="none"};
+ document.getElementById("description").textContent=m.description;
+ document.getElementById("similar").textContent=m.similar;
+ document.getElementById("song").textContent=m.song;
+ document.getElementById("songWhy").textContent=m.songWhy;
+ document.getElementById("vibe").textContent=m.vibe;
+ confetti(m.emoji);
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+function confetti(symbol){
+ for(let i=0;i<24;i++){let s=document.createElement("div");s.className="confetti";s.textContent=symbol;
+ s.style.left=Math.random()*100+"vw";s.style.animationDelay=Math.random()*1.2+"s";document.body.appendChild(s);
+ setTimeout(()=>s.remove(),5000);}
+}
+function restart(){startQuiz();window.scrollTo({top:0,behavior:"smooth"})}
+</script>
+</body>
 </html>
