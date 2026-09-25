@@ -186,7 +186,7 @@ const members={
   },
   zayn:{
     name:"Zayn Malik", theme:"theme-zayn", emoji:"🇬🇧",
-    photo:"https://commons.wikimedia.org/wiki/Special:FilePath/Zayn%20Malik%20November%202014.jpg?width=700",
+    photo:"https://img.youtube.com/vi/syFZfO_wfMQ/maxresdefault.jpg",
     tag:"You are artistic, introspective, and quietly distinctive.",
     description:"You may prefer depth over noise. You have your own taste, notice details other people miss, and enjoy having space to explore your creative side.",
     similar:"You value individuality, artistic expression, privacy, style, and choosing your own path.",
@@ -289,7 +289,7 @@ function showResult(){
  result.className=`card result ${m.theme}`;
  document.getElementById("resultName").textContent=`${m.emoji} ${m.name}`;
  document.getElementById("resultTag").textContent=m.tag;
- const photo=document.getElementById("resultPhoto");photo.src=m.photo;photo.alt=`One Direction-era photo of ${m.name}`;
+ const photo=document.getElementById("resultPhoto");photo.src=m.photo;photo.alt=winner==="zayn" ? "Night Changes official music video image featuring One Direction" : `One Direction-era photo of ${m.name}`;
  photo.onerror=()=>{photo.style.display="none"; console.warn("Result photo could not be loaded. Check your internet connection.");};
  document.getElementById("description").textContent=m.description;
  document.getElementById("similar").textContent=m.similar;
