@@ -6,7 +6,15 @@
 <title>Which One Direction member are you?</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600;700&display=swap');
-
+footer-image {
+  display: block;
+  width: 70%;
+  max-width: 600px;
+  height: auto;
+  margin: 0 auto 18px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(70, 45, 55, 0.18);
+}
 *{box-sizing:border-box}
 :root{
   --pink:#ff8fb1;--blue:#8dd8ff;--yellow:#ffe28a;--ink:#25233a;
@@ -600,8 +608,16 @@ function confetti(symbol){
 function restart(){startQuiz();window.scrollTo({top:0,behavior:"smooth"})}
 </script>
 
-<footer class="creator-credit" style="text-align:center; margin:28px auto 14px; padding:10px; font-size:0.9rem; opacity:0.72;">
-  Made by Sam O'Connor
+<footer class="site-footer">
+
+  <img
+    src="samnoco (1).jpg"
+    alt="About the creator - Sam O'Connor"
+    class="footer-image"
+  >
+
+  <p class="creator-credit">Made by Sam O'Connor</p>
+
 </footer>
 
 </body>
